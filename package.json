@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
-    "report": "playwright show-report",
-    "dummy": "none"
+    "report": "playwright show-report"
   },
   "keywords": [],
   "author": "",
