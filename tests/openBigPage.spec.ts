@@ -1,20 +1,9 @@
-import { test, expect } from '@playwright/test'
-import { BasePage } from '../pageObjects/pages/homePage'
-import { ComplicatedPage } from '../pageObjects/pages/complicatedPage'
+import { test, expect } from '../pageObjects/fixtures/homePageFixture'
 
-test('Goto complicated page', async ({ page }) => {
-    const currentPage = new BasePage(page)
-    const complicatedPage = new ComplicatedPage(page)
-    await currentPage.gotoStart()
-    await currentPage.pageContent.openBigPage()
-    await expect(page).toHaveURL('https://ultimateqa.com/complicated-page')
-    await currentPage.header.openHeaderBlog()
-    await expect(page).toHaveURL('https://ultimateqa.com/blog/')
-    await currentPage.footer.openFooterBlog()
-    await expect(page).toHaveURL('https://ultimateqa.com/blog/')
-    await currentPage.gotoStart()
-    await currentPage.pageContent.openBigPage()
-    await complicatedPage.buttonSection.isVisible()
-    await currentPage.header.openHome()
-    await expect(page).toHaveURL('https://ultimateqa.com/')
+
+test('Goto page', async ({ page, homePage, baseURL }) => {
+    await homePage.gotoLandingPage()
+    await expect(homePage.page).toHaveURL(baseURL + '')
+    await homePage.links.home
 })
+
