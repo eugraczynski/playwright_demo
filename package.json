@@ -4,7 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:traced": "npx playwright test --trace on",
+    "test:3-workers": "npx playwright test --workers 3",
+    "test:chromium": "npx playwright test --project=chromium",
+    "test:via-description": "npx playwright test -g 'Goto page'",
+    "test:html-report": "npx playwright test --reporter=html",
+    "test:line-report": "npx playwright test --reporter=line",
+    "test:list-report": "npx playwright test --reporter=list",
+    "test:dot-report": "npx playwright test --reporter=dot",
+    "test:blob-report": "npx playwright test --reporter=blob"
   },
   "keywords": [],
   "author": "",
