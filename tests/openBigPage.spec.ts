@@ -9,17 +9,18 @@ test.describe('Landing Page',async () => {
     
     test('Goto page test 1', async ({ homePage, baseURL }) => {
         await homePage.header.gotoHome()
-        await expect(homePage.page).toHaveURL(baseURL + '/index.php?route=common/home1')
+        await expect(homePage.page).toHaveURL(baseURL + '/index.php?route=common/home')
     })
     
-    test('Goto page test 2', async ({ homePage, baseURL }) => {
+    test('Shop by Category burger menu slider', async ({ homePage, baseURL }) => {
         await homePage.header.gotoHome()
         await expect(homePage.page).toHaveURL(baseURL + '/index.php?route=common/home')
     })
     
-    test('Goto page test 3', async ({ homePage, baseURL }) => {
+    test('Goto page test + footer description check', async ({ homePage, baseURL }) => {
         await homePage.header.gotoHome()
-        await expect(homePage.page).toHaveURL(baseURL + '/index.php?route=common/home3')
+        await expect(homePage.page).toHaveURL(baseURL + '/index.php?route=common/home')
+        await expect(homePage.footer.footerDesc).toHaveText('© LambdaTest - Powered by OpenCart')
     })
 })
 

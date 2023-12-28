@@ -1,13 +1,13 @@
 import { test as base } from "@playwright/test"
-import { BasePage } from "../pages/components/homePageComponents"
+import { HomePage } from "../pages/homePage"
 
 type pages =  {
-    homePage: BasePage
+    homePage: HomePage
 }
 
 export const test = base.extend<pages>({
     homePage: async ({ page }, use) => {
-        const homePage = new BasePage(page)
+        const homePage = new HomePage(page)
         await homePage.page.goto('/')
         await use(homePage)
     }

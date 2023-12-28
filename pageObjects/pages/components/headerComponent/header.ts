@@ -5,3 +5,4 @@ export class Header extends HeaderLocators {
         this.links.home.click()
     }
 }
+

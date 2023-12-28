@@ -27,7 +27,10 @@ export default defineConfig({
     baseURL: 'https://ecommerce-playground.lambdatest.io',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on',
+    trace: 'on-first-retry',
+
+    // Adding populated testID on lambdatest.io testing page
+    testIdAttribute: 'data-id'
   },
 
   /* Configure projects for major browsers */
