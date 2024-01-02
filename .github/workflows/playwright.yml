@@ -34,6 +34,6 @@ jobs:
           docker_password: ${{ secrets.DOCKER_PASSWORD }}
         run: |
           echo ${{ secrets.DOCKER_USER }}
-          docker login --username $docker_user --password-stdin $docker_password
+          docker login -u $docker_user --password-stdin $docker_password
           docker build -t jackiesoft/demo-app:playwright-js . 
           docker push jackiesoft/demo-app:playwright-js
