@@ -25,9 +25,6 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-  build-image:
-    runs-on: ubuntu-latest
-    steps:
       - name: Docker image push
         run: |
           docker build -t jackiesoft/demo-app:playwright-js . 
