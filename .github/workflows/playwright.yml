@@ -25,10 +25,6 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-<<<<<<< HEAD
-=======
-          
->>>>>>> c644b195769e2761faf3b574a3583fbc28931b52
   build-image:
     runs-on: ubuntu-latest
     steps:
