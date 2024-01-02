@@ -28,11 +28,10 @@ jobs:
   build-image:
     runs-on: ubuntu-latest
     steps:
-      - name: Configuring credentials
-        with:
+      - name: Docker image push
+        env:
           docker_user: ${{ secrets.DOCKER_USER }}
           docker_password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Docker image push
         run: |
           echo ${{ secrets.DOCKER_USER }}
           docker login -u $docker_user -p $docker_password
