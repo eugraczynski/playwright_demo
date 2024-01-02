@@ -29,7 +29,6 @@ jobs:
   build-image:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Docker image push
         run: |
           docker build -t jackiesoft/demo-app:playwright-js . 
