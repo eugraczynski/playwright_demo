@@ -29,7 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Docker credential setup
-        uses: .
         with:
           docker_username: ${{ secrets.DOCKER_USER }}
           docker_password: ${{ secrets.DOCKER_PASSWORD }}
