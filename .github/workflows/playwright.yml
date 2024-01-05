@@ -30,6 +30,6 @@ jobs:
     steps:
       - name: Docker image push
         run: |
-          docker build -t files/Dockerfile jackiesoft/demo-app:playwright-js . 
+          docker build -f files/Dockerfile -t jackiesoft/demo-app:playwright-js . 
           docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker push jackiesoft/demo-app:playwright-js
