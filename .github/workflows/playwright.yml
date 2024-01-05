@@ -32,7 +32,7 @@ jobs:
       - name: Build and push docker image
         uses: mr-smithers-excellent/docker-build-push@v4
         with: 
-          image: jackiesoft/demo-app
+          image: jackiesoft/demo-app:playwright-js
           tags: latest
           registry: docker.io
           username: ${{ secrets.DOCKER_USER }}
