@@ -28,12 +28,8 @@ jobs:
   build-image:
     runs-on: ubuntu-latest
     steps:
-      - name: Docker credential setup
-        with:
-          docker_username: ${{ secrets.DOCKER_USER }}
-          docker_password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Docker image push
         run: |
-          docker login -u $docker_username -p $docker_password
+          docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker build -t jackiesoft/demo-app:playwright-js . 
           docker push jackiesoft/demo-app:playwright-js
