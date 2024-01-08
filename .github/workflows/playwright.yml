@@ -26,12 +26,21 @@ jobs:
           path: playwright-report/
           retention-days: 30
   build-image:
+<<<<<<< HEAD
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Build and push docker image
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
+=======
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v3
+      - name: Build and push docker image
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with: 
+>>>>>>> 65fb750e0ce84996c7b3c1d0b0d97b87bb9388ca
           image: jackiesoft/demo-app
           tags: latest
           registry: docker.io
