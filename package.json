@@ -23,5 +23,9 @@
   "devDependencies": {
     "@playwright/test": "^1.40.1",
     "@types/node": "^20.10.3"
+  },
+  "dependencies": {
+    "eslint": "^8.56.0",
+    "npm": "^10.2.5"
   }
 }
