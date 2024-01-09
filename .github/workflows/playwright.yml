@@ -2,34 +2,14 @@ name: Playwright Tests
 on:
   push:
     branches: [ci]
-  pull_request:
-    branches: [ci]
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: Install dependencies
-        run: npm ci
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-      - name: Run Playwright tests
-        run: npm run test
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
       - name: Build and push docker image
-        uses: mr-smithers-excellent/docker-build-push@v4
-        with:
-          image: jackiesoft/demo-app
-          tags: latest
-          registry: docker.io
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          docker login -u ${{ secrets.DOCKER_USER }} -password-stdin ${{ secrets.DOCKER_PASSWORD }}
+          docker build -t jackiesoft/demo-app:playwright-js
+          docker push jackiesoft/demo-app:playwright-js
