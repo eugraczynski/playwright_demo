@@ -25,10 +25,6 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-  build-image:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
       - name: Build and push docker image
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
