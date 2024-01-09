@@ -1,7 +1,5 @@
-name: Playwright Tests
+name: deploy to TEST repo
 on:
-  push:
-    branches: [test]
   pull_request:
     branches: [test]
 jobs:
