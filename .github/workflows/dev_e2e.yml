@@ -37,4 +37,4 @@ jobs:
           git config user.email 'eug.raczynski@gmail.com'
           git config user.name 'eugraczynski'
           git fetch origin dev
-          git push dev test
+          git push test dev
