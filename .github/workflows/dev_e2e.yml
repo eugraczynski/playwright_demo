@@ -34,6 +34,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Pushing to test env
         run: |
+          git config user.email 'eug.raczynski@gmail.com'
+          git config user.name 'eugraczynski'
           git fetch origin dev
           git add .
           git commit -m 'push to test'
