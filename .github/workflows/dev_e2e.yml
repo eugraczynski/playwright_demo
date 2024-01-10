@@ -34,7 +34,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Pushing to test env
         run: |
-          git config user.email 'eug.raczynski@gmail.com'
-          git config user.name 'eugraczynski'
           git fetch origin dev
-          git push test dev
+          git push https://$GITHUB_TOKEN@github.com/eugraczynski/playwright-demo/dev
