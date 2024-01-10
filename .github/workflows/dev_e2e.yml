@@ -30,7 +30,14 @@ jobs:
     needs: [test]
     steps:
       - uses: actions/checkout@v3
-      - name: Build and deploy to test branch
+        env:
+          GITHUB_USER: eug.raczynski@gmail.com
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: login to github
+        run: |
+          git config --global user.email $GITHUB_USER
+          git config --global user.password $GITHUB_TOKEN
+      - name: Pushing to test env
         run: |
           git fetch origin dev
           git checkout dev
