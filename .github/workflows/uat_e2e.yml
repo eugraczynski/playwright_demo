@@ -1,4 +1,4 @@
-name: deploy to DEV repo
+name: deploy to UAT repo
 on:
   pull_request:
     branches: [UAT]
