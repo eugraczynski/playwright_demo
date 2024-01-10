@@ -37,5 +37,6 @@ jobs:
           git config user.email 'eug.raczynski@gmail.com'
           git config user.name 'eugraczynski'
           git fetch origin dev
-          git add .
+          git add *
           git commit -m 'push to test'
+          git push dev test
