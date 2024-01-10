@@ -31,11 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         env:
-          GITHUB_USER: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Login to github
-        run: |
-          gh auth login --with-token $GITHUB_TOKEN
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Pushing to test env
         run: |
           git fetch origin dev
