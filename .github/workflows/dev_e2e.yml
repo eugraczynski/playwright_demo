@@ -35,3 +35,4 @@ jobs:
       - name: Pushing to test env
         run: |
           git fetch origin dev
+          git add .
