@@ -36,3 +36,4 @@ jobs:
         run: |
           git fetch origin dev
           git add .
+          git commit -m 'push to test'
