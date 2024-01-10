@@ -25,3 +25,15 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+  deploy_to_test:
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and deploy to test branch
+        run: |
+          git fetch origin dev
+          git checkout dev
+          git add .
+          git commit -m "Push to test"
+          git push
