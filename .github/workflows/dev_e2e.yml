@@ -35,8 +35,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: login to github
         run: |
-          git config --global user.email '$GITHUB_USER'
-          git config --global user.password $GITHUB_TOKEN
+          git config --local user.email $GITHUB_USER
+          git config --local user.password $GITHUB_TOKEN
       - name: Pushing to test env
         run: |
           git fetch origin dev
