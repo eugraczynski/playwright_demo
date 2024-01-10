@@ -1,7 +1,7 @@
-name: deploy to TEST repo
+name: deploy to DEV repo
 on:
   pull_request:
-    branches: [test]
+    branches: [UAT]
 jobs:
   test:
     timeout-minutes: 60
