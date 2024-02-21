@@ -1,4 +1,3 @@
-import { FooterLocators } from "./footerComponent";
+import { FooterLocators } from './footerComponent';
 
-export class Footer extends FooterLocators {
-}
+export class Footer extends FooterLocators {}

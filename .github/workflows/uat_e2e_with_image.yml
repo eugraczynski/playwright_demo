@@ -1,4 +1,4 @@
-name: deploy to UAT repo wiht Docker image
+name: deploy to UAT repo with Docker image
 on:
   push:
     branches: [UAT]

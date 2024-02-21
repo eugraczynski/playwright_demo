@@ -1,8 +1,10 @@
-import { HeaderLocators } from "./headerComponent";
+import { HeaderLocators } from './headerComponent';
 
 export class Header extends HeaderLocators {
-    gotoHome() {
-        this.links.home.click()
-    }
+  constructor(name) {
+    super(name);
+  }
+  gotoHome() {
+    this.links.home.click();
+  }
 }
-

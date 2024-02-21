@@ -1,16 +1,16 @@
-import { test as base } from "@playwright/test"
-import { HomePage } from "../pages/homePage"
+import { test as base } from '@playwright/test';
+import { HomePage } from '../pages/homePage';
 
-type pages =  {
-    homePage: HomePage
-}
+type pages = {
+  homePage: HomePage;
+};
 
 export const test = base.extend<pages>({
-    homePage: async ({ page }, use) => {
-        const homePage = new HomePage(page)
-        await homePage.page.goto('/')
-        await use(homePage)
-    }
-})
+  homePage: async ({ page }, use) => {
+    const homePage = new HomePage(page);
+    await homePage.page.goto('/');
+    await use(homePage);
+  },
+});
 
-export { expect, Page, Locator } from "@playwright/test";
+export { expect, Page, Locator } from '@playwright/test';
