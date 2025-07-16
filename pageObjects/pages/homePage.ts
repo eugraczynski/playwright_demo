@@ -1,10 +1,12 @@
-import { type Page } from '@playwright/test';
+import { Page } from '@playwright/test';
 import { Header } from './components/headerComponent/header';
 import { Footer } from './components/footerComponent/footer';
 
-export class HomePage {
-  constructor(readonly page: Page) {}
-
-  public header = new Header(this.page.locator('header'));
-  public footer = new Footer(this.page.locator('footer'));
+export class HomePage { 
+  readonly header: Header;
+  readonly footer: Footer;
+    constructor(readonly page: Page) {
+    this.header = new Header(this.page);
+    this.footer = new Footer(this.page);
+  }
 }

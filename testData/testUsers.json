@@ -1,0 +1,10 @@
+ {
+    "first-user": {
+      "userId": "first-user",
+      "userPassword": 10987654
+    },
+    "second-user": {
+      "userId": "second-user",
+      "userPassword": 12345678
+    }
+}
