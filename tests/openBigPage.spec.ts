@@ -14,7 +14,7 @@ test.describe('Landing Page', async () => {
 
   test('Shop by Category burger menu slider', async ({ homePage, baseURL }) => {
     homePage.header.gotoHome();
-    homePage.header.burgerMenuClick()
+    homePage.header.burgerMenuClick();
     await expect(homePage.header.burgerSlider).toBeVisible();
     //await expect(homePage.page).toHaveScreenshot('burgerSlider.png', { maxDiffPixels: 900 });
   });
@@ -23,12 +23,10 @@ test.describe('Landing Page', async () => {
     homePage.header.gotoHome();
     await expect(homePage.page).toHaveURL(baseURL + '/index.php?route=common/home');
     await expect(homePage.footer.footerDesc).toHaveText('© LambdaTest - Powered by OpenCart');
-
-    
-    await homePage.page.route('**/index.php?route=common/home', (route) => {
-      const json = [{ name: 'Strawberry', id: 21 }]
-      route.fulfill({ headers: { 'Connection': 'keep-alives' }, json });
-      });
+    // await homePage.page.route('**/index.php?route=common/home', (route) => {
+    //   const json = [{ name: 'Strawberry', id: 21 }]
+    //   route.fulfill({ headers: { 'Connection': 'keep-alives' }, json });
+    //   });
     })
 
 
